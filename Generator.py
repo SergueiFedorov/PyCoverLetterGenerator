@@ -16,6 +16,8 @@ def LoadQualificationsData():
 
 
 def BuildOutput(inputData, qualificationsData):
+	if "items" not in inputData:
+		raise Exception("Please make sure the input file has an items element")
 
 	outputLines = []
 	for foundQualification in inputData["items"]:
@@ -31,6 +33,15 @@ def BuildOutput(inputData, qualificationsData):
 	return outputLines
 
 def BuildPreliminaryString(inputData, lines):
+	if "opening" not in inputData:
+		raise Exception("Please make sure the input file has an opening element")
+
+	if "itemsOpening" not in inputData:
+		raise Exception("Please make sure the input file has an itemsOpening element")	
+
+	if "closing" not in inputData:
+		raise Exception("Please make sure the input file has an closing element")	
+
 	items = [inputData["opening"].encode('utf-8'),
 			"\n\n",
 			inputData["itemsOpening"].encode('utf-8'), 
