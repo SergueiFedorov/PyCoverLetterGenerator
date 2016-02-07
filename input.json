@@ -5,8 +5,8 @@
 		"position" : "POSITION",
 		"email" : "me@email.com"
 	},
-	"opening" : "",
+	"opening" : "{email}",
 	"closing" : "",
-	"itemsOpening" : "I believe that I am a good fit for the {position}.",
+	"itemsOpening" : "I believe that I am a good fit for the {position} at {companyName}.",
 	"items" : ["C#", "java"]
 }
